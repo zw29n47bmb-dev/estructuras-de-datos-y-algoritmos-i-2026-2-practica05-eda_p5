@@ -1,32 +1,40 @@
-#ifndef COLA_H
-#define COLA_H
+#include "cola.h"
 
-#include "../lista/lista.h"
+Cola* cola_crear()
+{
+    return lista_crear();
+}
 
-typedef Lista Cola;
+int cola_vacia(Cola* cola)
+{
+    return lista_vacia(cola);
+}
 
-Cola* cola_crear();
+void cola_enqueue(Cola* cola, int dato)
+{
+    // insertar por tail
+    lista_insertar_tail(cola, dato);
+}
 
-int cola_vacia(Cola* cola);
+int cola_dequeue(Cola* cola)
+{
+    // eliminar por head
+    if (cola_vacia(cola))
+        return -1;
 
-/*
-TODO
-insertar por tail
-*/
-void cola_enqueue(Cola* cola, int dato);
+    return lista_eliminar_head(cola);
+}
 
-/*
-TODO
-eliminar por head
-*/
-int cola_dequeue(Cola* cola);
+int cola_frente(Cola* cola)
+{
+    // regresar head
+    if (cola_vacia(cola))
+        return -1;
 
-/*
-TODO
-regresar frente (head)
-*/
-int cola_frente(Cola* cola);
+    return lista_ver_head(cola);
+}
 
-void cola_destruir(Cola* cola);
-
-#endif
+void cola_destruir(Cola* cola)
+{
+    lista_destruir(cola);
+}
