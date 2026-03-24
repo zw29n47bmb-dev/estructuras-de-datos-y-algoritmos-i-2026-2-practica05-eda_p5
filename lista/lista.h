@@ -14,22 +14,13 @@ int lista_vacia(Lista* lista);
 
 void lista_insertar_head(Lista* lista, int dato);
 
-/*
-TODO
-Inserta al final usando tail
-*/
+/* Inserta al final usando tail */
 void lista_insertar_tail(Lista* lista, int dato);
 
-/*
-TODO
-Eliminar del inicio
-*/
+/* Eliminar del inicio */
 int lista_eliminar_head(Lista* lista);
 
-/*
-TODO
-Eliminar del final
-*/
+/* Eliminar del final */
 int lista_eliminar_tail(Lista* lista);
 
 void lista_imprimir(Lista* lista);
